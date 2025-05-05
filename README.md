@@ -1,6 +1,6 @@
 # ⚠️ Disclaimer: This is untested.
 
-I currently publish my bookmarks from [Raindrop to Ghost](https://github.com/danielraffel/raindrop-to-ghost-sync), and a friend asked if this could be adapted for WordPress—so I decided to take a first pass at it. If you're brave give it a try and lmk. ✊
+I use a custom tag in [Raindrop to automatically publish bookmarks to my Ghost blog](https://github.com/danielraffel/raindrop-to-ghost-sync). A friend asked if this could be adapted for WordPress—so I decided to take a first pass at it. If you're brave give it a try and lmk. ✊
 
 # raindrop-to-wordpress-sync
 
@@ -134,6 +134,7 @@ You only need to do this once. Make sure your theme or plugin isn't disabling cu
 
 - Add deletion support if Raindrop tag is removed
 - Add support for `.env` file loading in local dev
+- Test is 😂
 
 ---
 
