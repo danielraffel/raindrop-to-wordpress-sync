@@ -1,3 +1,7 @@
+# ⚠️ Disclaimer: This is untested.
+
+I currently publish my bookmarks from [Raindrop to Ghost](https://github.com/danielraffel/raindrop-to-ghost-sync), and a friend asked if this could be adapted for WordPress—so I decided to take a first pass at it. If you're brave give it a try and lmk. ✊
+
 # raindrop-to-wordpress-sync
 
 **raindrop-to-wordpress-sync** is a serverless Google Cloud Function that syncs your [Raindrop.io](https://raindrop.io) bookmarks to your [WordPress](https://wordpress.org) blog. It lets you use a custom tag to automatically publish selected bookmarks—with notes and highlights—straight to your blog, making it perfect for public linkrolls or curated reading lists.
