@@ -1,0 +1,12 @@
+{
+  "name": "raindrop-to-wordpress-sync",
+  "version": "1.0.0",
+  "description": "Synchronizes Raindrop bookmarks with a WordPress blog",
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
+    "axios": "^1.4.0"
+  },
+  "author": "Daniel Raffel",
+  "license": "MIT"
+}
