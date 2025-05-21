@@ -98,7 +98,7 @@ gcloud functions deploy raindropToWordpressSync \
     WORDPRESS_APP_PASSWORD=yourpass,\
     SYNC_SECRET=YOUR_SECRET
 ```
-Replace `[YOUR_REGION](https://app.raindrop.io/settings/integrations)`, [YOUR_RAINDROP_KEY](http://raindrop.io/integrations), `https://yourdomain.com`, `yourname`, `yourpass`, `YOUR_SECRET`.
+Replace [YOUR_REGION](https://app.raindrop.io/settings/integrations), [YOUR_RAINDROP_KEY](http://raindrop.io/integrations), `https://yourdomain.com`, `yourname`, `yourpass`, `YOUR_SECRET`.
 
 
 ### 🔍 Testing the Function
