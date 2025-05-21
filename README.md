@@ -85,8 +85,21 @@ npm install
 ### 5. Deploy to Google Cloud Functions
 
 ```bash
-gcloud functions deploy raindropToWordpressSync   --gen2   --runtime nodejs20   --trigger-http   --region YOUR_REGION   --entry-point raindropToWordpressSync   --set-env-vars RAINDROP_API_KEY=YOUR_RAINDROP_KEY,WORDPRESS_API_URL=https://yourdomain.com,WORDPRESS_USERNAME=yourname,WORDPRESS_APP_PASSWORD=yourpass,SYNC_SECRET=YOUR_SECRET
+gcloud functions deploy raindropToWordpressSync \
+  --gen2 \
+  --runtime nodejs20 \
+  --trigger-http \
+  --region YOUR_REGION \
+  --entry-point raindropToWordpressSync \
+  --set-env-vars \
+    RAINDROP_API_KEY=YOUR_RAINDROP_KEY,\
+    WORDPRESS_API_URL=https://yourdomain.com,\
+    WORDPRESS_USERNAME=yourname,\
+    WORDPRESS_APP_PASSWORD=yourpass,\
+    SYNC_SECRET=YOUR_SECRET
 ```
+Replace `[YOUR_REGION](https://app.raindrop.io/settings/integrations)`, [YOUR_RAINDROP_KEY](http://raindrop.io/integrations), `https://yourdomain.com`, `yourname`, `yourpass`, `YOUR_SECRET`.
+
 
 ### 🔍 Testing the Function
 
@@ -94,18 +107,33 @@ gcloud functions deploy raindropToWordpressSync   --gen2   --runtime nodejs20   
 curl -X POST https://REGION-PROJECT.cloudfunctions.net/raindropToWordpressSync   -H "Authorization: Bearer YOUR_SECRET"
 ```
 
+Replace REGION-PROJECT with your region from the output of the prior command, `YOUR_SECRET` with your [Test token](https://developer.raindrop.io/v1/authentication/token)
+
 ### ♻️ Updating the Function
 
 ```bash
-gcloud functions deploy raindropToWordpressSync   --gen2   --runtime nodejs20   --trigger-http   --region YOUR_REGION   --entry-point raindropToWordpressSync
+gcloud functions deploy raindropToWordpressSync \
+  --gen2 \
+  --runtime nodejs20 \
+  --trigger-http \
+  --region YOUR_REGION \
+  --entry-point raindropToWordpressSync
 ```
+
+Replace `[YOUR_REGION](https://app.raindrop.io/settings/integrations)`.
 
 ### ⏰ Automate with Google Cloud Scheduler
 
 Create a recurring job:
 
 ```bash
-gcloud scheduler jobs create http raindrop-wordpress-sync   --location=us-central1   --schedule="*/15 * * * *"   --uri=https://us-central1-YOUR_PROJECT.cloudfunctions.net/raindropToWordpressSync   --http-method=POST   --headers="Authorization=Bearer ${SYNC_SECRET}"   --attempt-deadline=540s
+gcloud scheduler jobs create http raindrop-wordpress-sync \
+  --location=us-central1 \
+  --schedule="*/15 * * * *" \
+  --uri=https://us-central1-YOUR_PROJECT.cloudfunctions.net/raindropToWordpressSync \
+  --http-method=POST \
+  --headers="Authorization=Bearer ${SYNC_SECRET}" \
+  --attempt-deadline=540s
 ```
 
 ---
